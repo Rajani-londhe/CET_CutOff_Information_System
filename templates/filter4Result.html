@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/filter4_style.css' %}">
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/styles.css' %}">
+
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="result-container">
+        <h2>30 College Results</h2>
+        {% if top_colleges %}
+            <table class="college-table">
+                <thead>
+                    <tr>
+                        <th>College Name</th>
+                        <th>College Code</th>
+                        <th>Cutoff</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for college, code, cutoff in top_colleges %}
+                        <tr>
+                            <td>{{ college }}</td>
+                            <td>{{ code }}</td>
+                            <td>{{ cutoff }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No results found for the selected filters.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

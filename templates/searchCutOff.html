@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search by Cutoff</title>
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/Result_style.css' %}">
+</head>
+<body>    
+    <div class="container">
+        {% include 'navbar.html' %}  <!-- Include the navbar here -->
+        <h1>Search by Percentile</h1>
+        <p>Welcome to the Cutoff Search!</p>
+        <p>Enter your percentile below to find the top colleges matching your score.</p>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ul>
+                <li>Enter your cutoff percentile in the input field.</li>
+                <li>Click the "Search" button to view the top colleges.</li>
+                <li>The results will be displayed in descending order based on the cutoff marks.</li>
+            </ul>
+        </div>
+
+        <form id="cutoffForm" method="GET" action="{% url 'cutOffResult' %}">
+            <input type="number" step="0.01" name="percentile" id="percentile" placeholder="Enter Percentile" required>
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+            
+        <div class="feedback-cards">
+            <div class="feedback-card">
+                <h3>John Doe</h3>
+                <p>"Thanks to this tool, I found the perfect college for my MCA! The information is clear and easy to understand."</p>
+            </div>
+            <div class="feedback-card">
+                <h3>Jane Smith</h3>
+             <p>"The cutoff information helped me secure my place in a top engineering college! Highly recommend this website!"</p>
+            </div>
+            <div class="feedback-card">
+                <h3>Mark Taylor</h3>
+                <p>"This site made my college search so much easier! I love the user-friendly interface."</p>
+            </div>
+            <div class="feedback-card">
+                <h3>Emily Jones</h3>
+             <p>"An excellent resource for students! The predictions helped me choose the right college."</p>
+            </div>
+        </div>   
+    </div>     
+</body>
+</html>

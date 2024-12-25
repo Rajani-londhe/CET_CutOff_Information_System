@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search by University</title>
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/filter4_style.css' %}">
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/styles.css' %}">
+
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="form-container">
+        <h2>Search Colleges by University</h2>
+        <form method="GET" action="{% url 'filter4Result' %}">
+            <label for="university">Select University:</label>
+            <select id="university" name="university" required>
+                <option value="">-- Select University --</option>
+                {% for uni in universities %}
+                    <option value="{{ uni }}">{{ uni }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="year">Enter Year:</label>
+            <select id="year" name="year" required>
+                <option value="">-- Select Year --</option>
+                {% for yr in years %}
+                    <option value="{{ yr }}">{{ yr }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="cap_round">Enter CAP Round:</label>
+            <select id="capround" name="capround" required>
+                <option value="">-- Select Cap Round --</option>
+                {% for round in caprounds %}
+                    <option value="{{ round }}">{{ round }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+    </div>
+</body>
+</html>

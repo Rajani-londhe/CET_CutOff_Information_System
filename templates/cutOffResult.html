@@ -1,0 +1,100 @@
+<body>
+    <div class="container">
+        <!-- Include Navbar -->
+        {% include 'navbar.html' %}
+
+        <!-- Page Header -->
+        <h1>Top Colleges Based on Percentile</h1>
+
+        <!-- College Percentile Table -->
+        {% if top_colleges %}
+            <table class="college-table">
+                <thead>
+                    <tr>
+                        <th>Percentile</th>
+                        <th>College Name</th>
+                        <th>College Code</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for college, percentile, code in top_colleges %}
+                        <tr>
+                            <td>{{ percentile }}</td>
+                            <td>{{ college }}</td>
+                            <td>{{ code }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p style="text-align: center; color: red;">No colleges found for the entered percentile.</p>
+        {% endif %}
+    </div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 28px;
+        }
+
+        .college-table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .college-table th, .college-table td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .college-table th {
+            background-color: #4CAF50;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .college-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .college-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .college-table th, .college-table td {
+            text-align: center;
+        }
+
+        .college-table td {
+            color: #333;
+        }
+
+        .college-table tr:first-child th {
+            border-top: none;
+        }
+
+        .college-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        p {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</body>

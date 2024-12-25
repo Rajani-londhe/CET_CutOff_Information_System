@@ -1,0 +1,77 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f7f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Centering Container */
+.container {
+    max-width: 600px;
+    margin: 100px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 2rem;
+    color: #0f9b8e;
+    margin-bottom: 20px;
+}
+
+/* Tab Buttons Container */
+.tabs {
+    display: flex;
+    flex-direction: column;
+    width: 200px; 
+    margin: 20px auto;
+}
+
+/* Tab Button Styling */
+.tab-btn {
+    background-color: #4CAF50;
+    color: white; 
+    padding: 15px 20px;
+    margin: 10px 0; 
+    border-radius: 5px;
+    font-size: 16px; 
+    text-align: center;
+}
+
+.tab-btn:hover {
+    background-color: #45a049; 
+
+}
+
+.tab-btn.active {
+    background-color: #0f9b8e;
+    color: white;
+    border-bottom: 3px solid white; /* Creates visual separation from the content area */
+}
+
+.tab-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tab-content p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .tab-btn {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CET Cutoff Information System</title>
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/Base_style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"> CET Cut Off !!</div>
+        <ul>
+            <li><a href="{% url 'base' %}">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li class="dropdown">CapRound
+                <ul class="dropdown-content">
+                    <li><a href="#">Round 1</a></li>
+                    <li><a href="#">Round 2</a></li>
+                    <li><a href="#">Round 3</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">Stream
+                <ul class="dropdown-content">
+                    <li><a href="#">MCA</a></li>
+                    <li><a href="#">Engineering</a></li>
+                    <li><a href="#">Polytechnic</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

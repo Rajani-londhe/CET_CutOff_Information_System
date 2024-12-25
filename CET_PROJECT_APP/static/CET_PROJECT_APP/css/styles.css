@@ -1,0 +1,183 @@
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f3f4f6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #0f9b8e, #f87b23);
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Form Container */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0f9b8e;
+}
+
+/* Dropdowns */
+.dropdown {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.select-btn {
+  background: #f3f4f6;
+  border: 1px solid #ddd;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-btn span {
+  font-size: 16px;
+  color: #333;
+}
+
+.select-btn .arrow {
+  border: solid #333;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  margin-left: 10px;
+}
+
+.content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* Show content when dropdown is clicked */
+.dropdown.active .content {
+  display: block;
+}
+
+.options {
+ 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options li {
+  
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.options li:hover {
+  background-color: #f1f1f1;
+}
+
+.options li.selected {
+  background-color: #007BFF;
+  color: white;
+}
+
+/* Scrollbar Styling */
+.options::-webkit-scrollbar {
+  width: 7px;
+}
+
+.options::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.options::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 25px;
+}
+
+.options::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+}
+
+/* Search Bar */
+.search {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* Button */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1a3364;
+  color: white;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: #54a6fd;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0ff6df;
+  color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.1rem;
+}

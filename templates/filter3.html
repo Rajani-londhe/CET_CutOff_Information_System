@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Search Form</title>
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/filter3_style.css' %}">
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/styles.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="form-container">
+        <h2>Search Colleges by Percentile AND Rank</h2>
+        <form id="cutoffForm" method="GET" action="{% url 'filter3Result' %}">
+            <input type="number" step="0.01" name="percentile" id="percentile" placeholder="Enter Percentile" required>
+            <input type="number" name="rank" id="rank" placeholder="Enter Rank" required>
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+    </div>
+</body>
+</html>

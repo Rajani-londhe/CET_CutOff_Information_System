@@ -1,0 +1,184 @@
+/* Base.html css ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    color: #333;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    position: relative; /* Add this for dropdown positioning */
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px; /* Add padding to make the clickable area larger */
+    display: block;
+}
+
+.navbar ul li:hover > a {
+    background-color: #555; /* Optional: Hover effect on top-level items */
+}
+
+/* Dropdown Content */
+.navbar ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Ensure it drops below the main item */
+    left: 0;
+    background-color: #a12a2a;
+    min-width: 160px;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+}
+
+/* Display dropdown on hover */
+.navbar ul li:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown {
+    color:#fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px; /* Add padding to make the clickable area larger */
+    display: block;
+}
+/* Dropdown items */
+.dropdown-content li {
+    padding: 12px;
+    text-align: left;
+}
+
+.dropdown-content li a {
+    color: #fff; /* Change to white for better visibility */
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+}
+
+.dropdown-content li a:hover {
+    background-color: #333; /* Highlight effect on hover */
+}
+
+/* Ensure no overlapping issues */
+.navbar ul li .dropdown-content li {
+    margin: 0;
+    padding: 0;
+}
+.navbar ul li {
+    z-index: 999;  /* Ensure navbar elements are on top */
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: white;
+    color: purple;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #f6d365;
+    color: #fff;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: #333;
+    color: white;
+}
+
+.footer-section {
+    width: 30%;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-section p, .footer-section ul {
+    font-size: 14px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+    font-size: 12px;
+}

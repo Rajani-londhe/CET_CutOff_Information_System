@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Search Results</title>
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/filter3_style.css' %}">
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/styles.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="result-container">
+        <h2>30 Colleges Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>College Name</th>
+                    <th>College Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for college in results %}
+                <tr>
+                    <td>{{ college.College }}</td>
+                    <td>{{ college.Code }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

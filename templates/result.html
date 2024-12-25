@@ -1,0 +1,68 @@
+{% extends 'C:\Users\abhij\OneDrive\Desktop\CET project\MIniProject_2_SYMCA_123M1H032\templates\header_footer.html' %}
+{% block title %}
+MCA Index Page
+{% endblock %}
+{% block content %}       
+    <p id="res" ></p>   
+    <script>
+        var data = window.location.search;
+        // document.getElementById("res").innerHTML = data;
+        var parameters = new URLSearchParams(data);
+        console.log(parameters);
+
+        var cname = parameters.get("college")
+        var category = parameters.get("category")
+        var candidateType = parameters.get("candidatetype")        
+        var year = parameters.get("year")
+        var round = parameters.get("round")
+
+        var getData = "College Name: "+ cname +"<br>";
+            getData += "College Code: " +"<br>";
+            getData += "University: "+ "<br>";
+            getData += "Status:"+ "<br>";
+            getData += "Cutoff of "+ category + " Category for " + candidateType + " candidate"+ "<br>";
+            getData += "Year:"+ "<br>"; 
+            getData += "Cap Round:"+ "<br>"; 
+            getData += "CutOff Percentile:"+ "<br>";
+            getData += "CutOff Rank:"+ "<br>";             
+           // document.getElementById("res").innerHTML = getData;       
+
+        window.onload = function() {            
+        document.getElementById("myLink1").innerHTML=cname;
+        document.getElementById("myLink2").innerHTML=category;
+        document.getElementById("myLink3").innerHTML=candidateType;
+        document.getElementById("myLink4").innerHTML=year;
+        document.getElementById("myLink5").innerHTML=round;
+        } 
+    </script>  
+     
+    
+    {% if searchresults %}    
+        {% for searchresult in searchresults %}
+        <div style: text align ="center">
+        <h2><u> College Related Information: </u></h2>  
+        <p><strong>College Name: </strong><a id="myLink1"></a></p>        
+        <p><strong>Home University: </strong>{{searchresult.University}}</p>
+        <p><strong>Status: </strong>{{searchresult.Status}}</p>
+        <p><strong>College Code: </strong>{{searchresult.Code}}</p>
+        <hr>
+        <h2><u> CUT OFF Related Information: </u></h2> 
+        <p><strong>Cutoff for  </strong><a id="myLink2"></a><strong>  Category for  </strong>
+            <a id="myLink3"></a><strong>  Type Cadidate : </strong></p>
+    
+        <p><strong>Year: </strong><a id="myLink4"></a></p>            
+        <p><strong> Round: </strong><a id="myLink5"></a></p>
+        <p><strong>Cutoff Percentile: </strong>{{searchresult.Percentile}} </p>
+        <p><strong>Cutoff Rank: </strong>{{searchresult.Rank}} </p>
+        <hr>
+        <a href="{% url 'index' %}" > <h2>Return To Search </h2></a><br> 
+        <hr>
+        </div>  
+        {% endfor %}
+    {% endif %}
+    {% endblock content %}       
+    
+      
+         
+
+  

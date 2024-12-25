@@ -1,0 +1,35 @@
+{% block title %}Login{% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/login_style.css' %}">
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/Base_style.css' %}">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Excited About CET Cut Off !!</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>            
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+        </ul>
+    </nav>   
+{% block content %}
+<div class="form-container">
+    <h2>Login to your Account</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CET Cutoff Information System</title>
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/styles.css' %}">
+</head>
+<body>
+
+    {% include 'navbar.html' %}  <!-- Include the navbar here -->
+    {% block content %} 
+    <!-- Main Container -->
+    <div class="container my-3">
+        <h2>Search for College Cut Off Information</h2>
+        <form id="searchForm" method="GET" action="result">
+            <!-- College Selection -->
+            <div class="dropdown" id="collegeDropdown">
+                <div class="select-btn">
+                    <span>Select College</span>
+                    <i class="arrow down"></i>
+                </div>
+                <div class="content">
+                    <div class="search">
+                        <i class="material-icons">search</i>
+                        <input spellcheck="false" type="text" placeholder="Search college" name="college" id="college">
+                    </div>
+                    <ul class="options"></ul>
+                </div>
+            </div>            
+            <br>
+
+            <!-- Category Selection -->
+            <div class="dropdown" id="categoryDropdown">
+                <div class="select-btn">
+                    <span>Select Category</span>
+                    <i class="arrow down"></i>
+                </div>
+                <div class="content">
+                    <div class="search">
+                        <i class="material-icons">search</i>
+                        <input spellcheck="false" type="text" placeholder="Search category" name="category" id="category">
+                    </div>
+                    <ul class="options"></ul>
+                </div>
+            </div>            
+            <br>
+
+            <!-- University Selection -->
+            <div class="dropdown" id="universityDropdown">
+                <div class="select-btn">
+                    <span>Select Candidate Type</span>
+                    <i class="arrow down"></i>
+                </div>
+                <div class="content">
+                    <div class="search">
+                        <i class="material-icons">search</i>
+                        <input spellcheck="false" type="text" placeholder="Search Candidate Type" name="candidatetype" id="candidatetype">
+                    </div>
+                    <ul class="options"></ul>
+                </div>
+            </div>            
+            <br>
+
+            <!-- Year Selection -->
+            <div class="dropdown" id="yearDropdown">
+                <div class="select-btn">
+                    <span>Select Year</span>
+                    <i class="arrow down"></i>
+                </div>
+                <div class="content">
+                    <div class="search">
+                        <i class="material-icons">search</i>
+                        <input spellcheck="false" type="text" placeholder="Search Year" name="year" id="year">
+                    </div>
+                    <ul class="options"></ul>
+                </div>
+            </div>            
+            <br>   
+            
+            <!-- Round Selection -->
+            <div class="dropdown" id="roundDropdown">
+                <div class="select-btn">
+                    <span>Select Cap Round</span>
+                    <i class="arrow down"></i>
+                </div>
+                <div class="content">
+                    <div class="search">
+                        <i class="material-icons">search</i>
+                        <input spellcheck="false" type="text" placeholder="Search Cap Round" name="round" id="round">
+                    </div>
+                    <ul class="options"></ul>
+                </div>
+            </div>            
+            <br>
+            <button type="submit" class="search-btn">Search Result</button>            
+        </form>     
+        <div id="result"></div>       
+    </div>
+{% endblock content%}
+<section class="footer">
+    <div class="footer-section">
+        <h3>About Us</h3>
+        <p>We provide the latest information on CET cutoffs for MCA, Engineering, and Polytechnic courses. Our aim is to help students make informed decisions about their education.</p>
+    </div>
+    <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: info@cetcutoffinfo.com</p>
+        <p>Phone: +1 234 567 890</p>
+        <p>Address: 123 Education St, City, Country</p>
+    </div>
+    <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+        </ul>
+    </div>
+</section>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+<script src="{% static 'CET_PROJECT_APP/javascript/script.js' %}"></script>
+</body>
+</html>
+
+      
+

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CET Cutoff System{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'CET_PROJECT_APP/css/styles.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <h1>Welcome to the CET Cut Off Information System</h1>
+            <p>"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela</p>
+        </div>
+    </header>
+
+    <!-- Main Content Block -->
+    <div class="container">
+        {% block content %}
+        <!-- This will be overridden in child templates -->
+        {% endblock %}
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>"Success is not final, failure is not fatal: It is the courage to continue that counts." – Winston Churchill</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="{% static 'CET_PROJECT_APP/javascript/script.js' %}"></script>
+</body>
+</html>
